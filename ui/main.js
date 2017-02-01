@@ -24,6 +24,7 @@ button.onclick = function() {
     request.send(null);
 };
 
+
 // submit name
 var submit = document.getElementById('submit_btn');
 
