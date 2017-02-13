@@ -85,12 +85,12 @@ function createTemplate(data) {
     return htmlTemplate;
 }
 
-app.get('/mysite', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
-
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index2.html'));
+});
+
+app.get('/mysite', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 var counter = 0;
