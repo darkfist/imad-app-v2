@@ -16,7 +16,7 @@ var config = {
 
 var app = express();
 app.use(morgan('combined'));
-//app.use(bodyParser.json());
+app.use(bodyParser.json());
 app.use(session({
     secret: 'someRandomValue',
     cookie: {maxAge: 1000 * 60 * 60 * 24 * 30}
@@ -124,6 +124,11 @@ app.get('/check-login', function (req, res) {
    } else {
        res.send('you are not logged in');
    }
+});
+
+app.get('/logout', function (req, res) {
+   delete req.session.auth;
+   res.send('you are logged out');
 });
 
 var pool = new Pool(config);
