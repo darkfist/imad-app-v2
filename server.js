@@ -3,7 +3,6 @@ var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
 var crypto = require('crypto');
-var bodyParser = require('body-parser');
 
 var config = {
     user: 'darkfist',
@@ -15,7 +14,7 @@ var config = {
 
 var app = express();
 app.use(morgan('combined'));
-app.use(bodyParser.json());
+
 
 function createTemplate(data) {
     var title = data.title;
