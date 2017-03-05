@@ -60,11 +60,11 @@ function createTemplate(data) {
 }
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+  res.sendFile(path.join(__dirname, 'ui', 'index2.html'));
 });
 
 app.get('/mysite', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index2.html'));
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 function hash (input, salt) {
@@ -73,7 +73,7 @@ function hash (input, salt) {
 }
 
 app.get('/hash/:input', function (req, res) {
-   var hashedString = hash(req.params.input, 'this-isspmedfsd');
+   var hashedString = hash(req.params.input, 'this-is-some-random-string');
    res.send(hashedString);
 });
 
